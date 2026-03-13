@@ -18,12 +18,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);ove
 h1,h2,h3,h4{font-family:'Syne',sans-serif}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--surface)}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
-/* Layout */
 .app{display:flex;height:100vh}
 .sidebar{width:240px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:20px 0;overflow:hidden}
 .main{flex:1;overflow-y:auto;padding:28px;background:var(--bg)}
 
-/* Sidebar */
 .sb-logo{padding:0 20px 20px;border-bottom:1px solid var(--border);margin-bottom:12px}
 .sb-brand{display:flex;align-items:center;gap:10px}
 .sb-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--accent),var(--sky));border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
@@ -39,7 +37,6 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 .u-avatar{width:32px;height:32px;background:linear-gradient(135deg,var(--purple),var(--sky));border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0}
 .u-name{font-size:13px;font-weight:600}
 .u-meta{font-size:11px;color:var(--muted)}
-/* Logout button */
 .logout-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:7px;padding:8px;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.2);border-radius:9px;color:var(--rose);font-size:12.5px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
 .logout-btn:hover{background:rgba(248,113,113,.15);border-color:rgba(248,113,113,.4)}
 
@@ -54,23 +51,20 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;position:relative;overflow:hidden}
 .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--c,var(--accent))}
 .stat-card .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:7px;font-weight:600}
-.stat-card .val{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;margin-bottom:3px}
+.stat-card .val{font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin-bottom:3px}
 .stat-card .sub{font-size:11px;color:var(--muted)}
 .stat-card .ico{position:absolute;right:18px;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px}
 
-/* Cards */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
 .card-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:0}
 .card-title{font-size:15px;font-weight:700;margin-bottom:16px}
 
-/* Chart bars */
 .bar-wrap{margin-bottom:11px}
 .bar-lbl{display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:5px}
 .bar-lbl span:last-child{color:var(--accent);font-weight:600}
 .bar-track{height:7px;background:var(--surface2);border-radius:4px;overflow:hidden}
-.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--sky))}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--sky));transition:width 1s ease}
 
-/* Health ring */
 .health-wrap{text-align:center}
 .health-ring{position:relative;width:110px;height:110px;margin:0 auto 14px}
 .health-ring svg{transform:rotate(-90deg)}
@@ -80,12 +74,13 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 .health-label{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;color:var(--accent);margin-bottom:8px}
 .alert-ok{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(110,231,183,.1);border:1px solid rgba(110,231,183,.3);border-radius:20px;font-size:12px;color:var(--accent)}
 
-/* Expense table */
+/* Expenses */
 .expense-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
 .field-lbl{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-bottom:5px;font-weight:600}
-.inp{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:9px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;width:100%}
-.btn-add{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:9px;padding:9px 16px;color:#0a0f1e;font-weight:700;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.inp{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:9px 13px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13px;width:100%;outline:none}
+.inp:focus{border-color:var(--accent)}
+.btn-add{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:9px;padding:9px 16px;color:#0a0f1e;font-weight:700;font-size:13px;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;font-family:'DM Sans',sans-serif}
 .etable{width:100%;border-collapse:collapse}
 .etable th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:9px 11px;border-bottom:1px solid var(--border)}
 .etable td{padding:11px;border-bottom:1px solid var(--border);font-size:13px}
@@ -111,15 +106,75 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 @keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-7px)}}
 .chat-input-row{display:flex;gap:10px;align-items:center;padding-top:14px;border-top:1px solid var(--border);flex-shrink:0}
 .mic-btn{width:42px;height:42px;border-radius:11px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
-.chat-inp{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:11px 15px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13.5px}
+.chat-inp{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:11px 15px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:13.5px;outline:none}
 .send-btn{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:11px;cursor:pointer;color:#0a0f1e;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-/* Analysis */
+/* ══ AI Analysis ══ */
 .focus-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
-.focus-btn{padding:7px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;color:var(--muted);font-size:12.5px;cursor:pointer;transition:all .2s}
+.focus-btn{padding:7px 16px;background:var(--surface2);border:1px solid var(--border);border-radius:20px;color:var(--muted);font-size:12.5px;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
 .focus-btn.active{background:rgba(110,231,183,.1);border-color:var(--accent);color:var(--accent)}
 .run-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:11px;padding:11px 22px;color:#0a0f1e;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;margin-bottom:20px}
 .analysis-box{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:20px;font-size:13.5px;line-height:1.85;white-space:pre-wrap}
+
+/* Analysis Feature Cards */
+.analysis-features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.feat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.feat-card::before{content:'';position:absolute;inset:0;background:var(--fc,rgba(110,231,183,.04));opacity:0;transition:opacity .25s}
+.feat-card:hover::before{opacity:1}
+.feat-card:hover{border-color:var(--fb,rgba(110,231,183,.4));transform:translateY(-2px)}
+.feat-card.selected{border-color:var(--fb,var(--accent));background:rgba(110,231,183,.03)}
+.feat-card .fc-icon{font-size:28px;margin-bottom:10px}
+.feat-card h4{font-size:13.5px;font-weight:700;margin-bottom:5px}
+.feat-card p{font-size:11.5px;color:var(--muted);line-height:1.45}
+.feat-card .fc-badge{position:absolute;top:10px;right:10px;padding:2px 8px;border-radius:10px;font-size:9.5px;font-weight:700;background:rgba(110,231,183,.12);color:var(--accent);border:1px solid rgba(110,231,183,.25)}
+
+/* Mood Meter */
+.mood-meter{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px}
+.mood-title{font-size:15px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.mood-sub{font-size:12px;color:var(--muted);margin-bottom:18px}
+.mood-track{height:14px;border-radius:7px;background:linear-gradient(90deg,#f87171,#fbbf24,#6ee7b7);position:relative;margin-bottom:12px}
+.mood-needle{position:absolute;top:-4px;width:22px;height:22px;border-radius:50%;background:white;border:3px solid var(--bg);box-shadow:0 2px 8px rgba(0,0,0,.4);transform:translateX(-50%);transition:left 1.2s cubic-bezier(.34,1.56,.64,1)}
+.mood-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.mood-verdict{text-align:center;margin-top:16px;padding:12px 20px;border-radius:11px;font-size:13px;font-weight:600}
+
+/* Spend DNA */
+.dna-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.dna-item{background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:13px;display:flex;align-items:center;gap:12px}
+.dna-ring{width:44px;height:44px;flex-shrink:0;position:relative}
+.dna-ring svg{transform:rotate(-90deg)}
+.dna-ring-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700}
+.dna-info h5{font-size:12.5px;font-weight:700;margin-bottom:2px}
+.dna-info span{font-size:11px;color:var(--muted)}
+
+/* Forecast Timeline */
+.forecast-wrap{margin-top:14px}
+.forecast-timeline{display:flex;gap:0;position:relative;margin-bottom:16px}
+.forecast-timeline::before{content:'';position:absolute;top:20px;left:0;right:0;height:2px;background:var(--border)}
+.ft-point{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:1}
+.ft-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--bg);flex-shrink:0}
+.ft-lbl{font-size:10px;color:var(--muted);text-align:center}
+.ft-val{font-size:12px;font-weight:700;text-align:center}
+
+/* Smart Alerts */
+.alerts-wrap{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.smart-alert{display:flex;align-items:flex-start;gap:12px;padding:13px 15px;border-radius:11px;font-size:12.5px}
+.smart-alert.warn{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);color:var(--text)}
+.smart-alert.danger{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.25);color:var(--text)}
+.smart-alert.good{background:rgba(110,231,183,.07);border:1px solid rgba(110,231,183,.25);color:var(--text)}
+.smart-alert .al-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.smart-alert strong{display:block;margin-bottom:3px;font-size:13px}
+
+/* Challenge Cards */
+.challenge-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.challenge-card{background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:15px;position:relative;overflow:hidden}
+.challenge-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--ch-c,var(--accent))}
+.ch-title{font-size:13px;font-weight:700;margin-bottom:4px}
+.ch-desc{font-size:11.5px;color:var(--muted);margin-bottom:10px;line-height:1.4}
+.ch-reward{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.3);border-radius:10px;font-size:10.5px;color:var(--gold);font-weight:600}
+.ch-prog{margin-top:9px}
+.ch-prog-bar{height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:4px}
+.ch-prog-fill{height:100%;border-radius:3px;background:var(--ch-c,var(--accent))}
+.ch-prog-lbl{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
 
 /* Recs */
 .rec-tabs{display:flex;gap:3px;margin-bottom:20px;background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:3px}
@@ -153,8 +208,8 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 </style>
 </head>
 <body>
-
 <div class="app" id="main-app">
+
 <!-- ══ SIDEBAR ══ -->
 <div class="sidebar">
   <div class="sb-logo">
@@ -164,23 +219,22 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
     </div>
   </div>
   <div class="sb-section">Main</div>
-  <div class="nav-item active" onclick="go('dashboard',this)"><i class="fa fa-chart-pie"></i>Dashboard</div>
-  <div class="nav-item" onclick="go('expenses',this)"><i class="fa fa-receipt"></i>Expenses</div>
-  <div class="nav-item" onclick="go('budget',this)"><i class="fa fa-sliders"></i>Budget Limits</div>
+  <div class="nav-item active" id="nav-dashboard" onclick="go('dashboard',this)"><i class="fa fa-chart-pie"></i>Dashboard</div>
+  <div class="nav-item" id="nav-expenses" onclick="go('expenses',this)"><i class="fa fa-receipt"></i>Expenses</div>
+  <div class="nav-item" id="nav-budget" onclick="go('budget',this)"><i class="fa fa-sliders"></i>Budget Limits</div>
   <div class="sb-section">AI Tools</div>
-  <div class="nav-item" onclick="go('chat',this)"><i class="fa fa-robot"></i>AI Chatbot</div>
-  <div class="nav-item" onclick="go('analysis',this)"><i class="fa fa-magnifying-glass-chart"></i>AI Analysis</div>
-  <div class="nav-item" onclick="go('recs',this)"><i class="fa fa-lightbulb"></i>Recommendations</div>
+  <div class="nav-item" id="nav-chat" onclick="go('chat',this)"><i class="fa fa-robot"></i>AI Chatbot</div>
+  <div class="nav-item" id="nav-analysis" onclick="go('analysis',this)"><i class="fa fa-magnifying-glass-chart"></i>AI Analysis</div>
+  <div class="nav-item" id="nav-recs" onclick="go('recs',this)"><i class="fa fa-lightbulb"></i>Recommendations</div>
   <div class="sb-section">Planners</div>
-  <div class="nav-item" onclick="go('home',this)"><i class="fa fa-house"></i>Home Planner</div>
-  <div class="nav-item" onclick="go('party',this)"><i class="fa fa-champagne-glasses"></i>Party Planner</div>
-  <div class="nav-item" onclick="go('jewelry',this)"><i class="fa fa-gem"></i>Jewelry Planner</div>
+  <div class="nav-item" id="nav-home" onclick="go('home',this)"><i class="fa fa-house"></i>Home Planner</div>
+  <div class="nav-item" id="nav-party" onclick="go('party',this)"><i class="fa fa-champagne-glasses"></i>Party Planner</div>
+  <div class="nav-item" id="nav-jewelry" onclick="go('jewelry',this)"><i class="fa fa-gem"></i>Jewelry Planner</div>
   <div class="sb-bottom">
     <div class="user-badge">
       <div class="u-avatar" id="u-avatar">A</div>
-      <div><div class="u-name" id="u-name">Loading...</div><div class="u-meta" id="u-meta">USD • $5,200/mo</div></div>
+      <div><div class="u-name" id="u-name">Loading...</div><div class="u-meta" id="u-meta">—</div></div>
     </div>
-    <!-- LOGOUT BUTTON — clears session and goes back to login.html -->
     <button class="logout-btn" onclick="doLogout()"><i class="fa fa-right-from-bracket"></i> Sign Out</button>
   </div>
 </div>
@@ -190,31 +244,31 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 
 <!-- Dashboard -->
 <div class="page active" id="page-dashboard">
-  <div class="page-header"><h2>Dashboard</h2><p>Your financial overview at a glance</p></div>
+  <div class="page-header"><h2>Dashboard</h2><p id="dash-sub">Your financial overview at a glance</p></div>
   <div class="stats-row">
-    <div class="stat-card" style="--c:var(--accent)"><div class="lbl">Monthly Income</div><div class="val">$5,200</div><div class="sub">Total budget</div><div class="ico" style="background:rgba(110,231,183,.1);color:var(--accent)"><i class="fa fa-wallet"></i></div></div>
-    <div class="stat-card" style="--c:var(--rose)"><div class="lbl">Total Spent</div><div class="val" style="color:var(--rose)">$2,840</div><div class="sub">This month</div><div class="ico" style="background:rgba(248,113,113,.1);color:var(--rose)"><i class="fa fa-arrow-trend-up"></i></div></div>
-    <div class="stat-card" style="--c:var(--sky)"><div class="lbl">Remaining</div><div class="val" style="color:var(--sky)">$2,360</div><div class="sub">Available balance</div><div class="ico" style="background:rgba(56,189,248,.1);color:var(--sky)"><i class="fa fa-piggy-bank"></i></div></div>
-    <div class="stat-card" style="--c:var(--gold)"><div class="lbl">Savings Progress</div><div class="val" style="color:var(--gold)">68%</div><div class="sub">$680 / $1,000 goal</div><div class="ico" style="background:rgba(251,191,36,.1);color:var(--gold)"><i class="fa fa-star"></i></div></div>
+    <div class="stat-card" style="--c:var(--accent)"><div class="lbl">Monthly Income</div><div class="val" id="d-income">—</div><div class="sub">Total budget</div><div class="ico" style="background:rgba(110,231,183,.1);color:var(--accent)"><i class="fa fa-wallet"></i></div></div>
+    <div class="stat-card" style="--c:var(--rose)"><div class="lbl">Total Spent</div><div class="val" style="color:var(--rose)" id="d-spent">—</div><div class="sub">This month</div><div class="ico" style="background:rgba(248,113,113,.1);color:var(--rose)"><i class="fa fa-arrow-trend-up"></i></div></div>
+    <div class="stat-card" style="--c:var(--sky)"><div class="lbl">Remaining</div><div class="val" style="color:var(--sky)" id="d-remain">—</div><div class="sub">Available balance</div><div class="ico" style="background:rgba(56,189,248,.1);color:var(--sky)"><i class="fa fa-piggy-bank"></i></div></div>
+    <div class="stat-card" style="--c:var(--gold)"><div class="lbl">Savings Progress</div><div class="val" style="color:var(--gold)" id="d-savings-pct">—</div><div class="sub" id="d-savings-sub">Set a savings goal</div><div class="ico" style="background:rgba(251,191,36,.1);color:var(--gold)"><i class="fa fa-star"></i></div></div>
   </div>
   <div class="card-row">
     <div class="card">
       <div class="card-title">Spending by Category</div>
-      <div class="bar-wrap"><div class="bar-lbl"><span>🍔 Food</span><span>$820</span></div><div class="bar-track"><div class="bar-fill" style="width:89%"></div></div></div>
-      <div class="bar-wrap"><div class="bar-lbl"><span>🏠 Housing</span><span>$1,200</span></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,var(--purple),var(--sky))"></div></div></div>
-      <div class="bar-wrap"><div class="bar-lbl"><span>🚗 Transport</span><span>$340</span></div><div class="bar-track"><div class="bar-fill" style="width:37%;background:linear-gradient(90deg,var(--sky),var(--accent))"></div></div></div>
-      <div class="bar-wrap"><div class="bar-lbl"><span>🎮 Entertainment</span><span>$280</span></div><div class="bar-track"><div class="bar-fill" style="width:30%;background:linear-gradient(90deg,var(--gold),var(--rose))"></div></div></div>
-      <div class="bar-wrap"><div class="bar-lbl"><span>🛍️ Shopping</span><span>$200</span></div><div class="bar-track"><div class="bar-fill" style="width:22%;background:linear-gradient(90deg,var(--rose),var(--purple))"></div></div></div>
+      <div class="bar-wrap"><div class="bar-lbl"><span>🍔 Food</span><span id="bar-food">—</span></div><div class="bar-track"><div class="bar-fill" id="bf-food" style="width:0%"></div></div></div>
+      <div class="bar-wrap"><div class="bar-lbl"><span>🏠 Housing</span><span id="bar-housing">—</span></div><div class="bar-track"><div class="bar-fill" id="bf-housing" style="width:0%;background:linear-gradient(90deg,var(--purple),var(--sky))"></div></div></div>
+      <div class="bar-wrap"><div class="bar-lbl"><span>🚗 Transport</span><span id="bar-transport">—</span></div><div class="bar-track"><div class="bar-fill" id="bf-transport" style="width:0%;background:linear-gradient(90deg,var(--sky),var(--accent))"></div></div></div>
+      <div class="bar-wrap"><div class="bar-lbl"><span>🎮 Entertainment</span><span id="bar-ent">—</span></div><div class="bar-track"><div class="bar-fill" id="bf-ent" style="width:0%;background:linear-gradient(90deg,var(--gold),var(--rose))"></div></div></div>
+      <div class="bar-wrap"><div class="bar-lbl"><span>🛍️ Shopping</span><span id="bar-shop">—</span></div><div class="bar-track"><div class="bar-fill" id="bf-shop" style="width:0%;background:linear-gradient(90deg,var(--rose),var(--purple))"></div></div></div>
     </div>
     <div class="card health-wrap">
       <div class="card-title" style="text-align:center">Financial Health</div>
       <div class="health-ring">
-        <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="46" fill="none" stroke="var(--surface2)" stroke-width="9"/><circle cx="55" cy="55" r="46" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-dasharray="289" stroke-dashoffset="72" style="transition:all 1s ease"/></svg>
-        <div class="score-text"><div class="score-num">75</div><div class="score-lbl">score</div></div>
+        <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="46" fill="none" stroke="var(--surface2)" stroke-width="9"/><circle cx="55" cy="55" r="46" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" stroke-dasharray="289" id="health-arc" stroke-dashoffset="289" style="transition:all 1s ease"/></svg>
+        <div class="score-text"><div class="score-num" id="health-score">—</div><div class="score-lbl">score</div></div>
       </div>
-      <div class="health-label">Good</div>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">You're spending 54.6% of your income. Keep it up!</p>
-      <div class="alert-ok"><i class="fa fa-check-circle"></i>All budgets on track</div>
+      <div class="health-label" id="health-label">—</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:12px" id="health-sub">Add expenses to see your score</p>
+      <div class="alert-ok" id="health-alert"><i class="fa fa-check-circle"></i>Start tracking your budget</div>
     </div>
   </div>
 </div>
@@ -225,17 +279,17 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
   <div class="expense-form">
     <div class="card-title">Add New Expense</div>
     <div class="form-grid">
-      <div><label class="field-lbl">Category</label><select class="inp"><option>Food</option><option>Transport</option><option>Housing</option><option>Entertainment</option><option>Shopping</option></select></div>
-      <div><label class="field-lbl">Amount</label><input class="inp" type="number" placeholder="0.00"/></div>
-      <div><label class="field-lbl">Description</label><input class="inp" type="text" placeholder="What was it for?"/></div>
-      <div><label class="field-lbl">Date</label><input class="inp" type="date" value="2025-02-22"/></div>
+      <div><label class="field-lbl">Category</label><select class="inp" id="exp-cat"><option>Food</option><option>Transport</option><option>Housing</option><option>Entertainment</option><option>Shopping</option><option>Health</option><option>Education</option><option>Other</option></select></div>
+      <div><label class="field-lbl">Amount (<span class="cur-sym">$</span>)</label><input class="inp" type="number" id="exp-amt" placeholder="0.00"/></div>
+      <div><label class="field-lbl">Description</label><input class="inp" type="text" id="exp-desc" placeholder="What was it for?"/></div>
+      <div><label class="field-lbl">Date</label><input class="inp" type="date" id="exp-date"/></div>
       <div><label class="field-lbl">&nbsp;</label><button class="btn-add" onclick="addDemoExpense()"><i class="fa fa-plus"></i>Add</button></div>
     </div>
   </div>
   <div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
       <div class="card-title" style="margin:0">All Expenses</div>
-      <span style="font-size:12px;color:var(--muted)" id="exp-count">5 expenses</span>
+      <span style="font-size:12px;color:var(--muted)" id="exp-count">0 expenses</span>
     </div>
     <table class="etable" id="exp-table">
       <thead><tr><th>Date</th><th>Category</th><th>Description</th><th>Amount</th><th></th></tr></thead>
@@ -261,14 +315,14 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
   </div>
   <div class="card">
     <div class="card-title">Savings Tracker</div>
-    <div class="form-2">
-      <div><label class="field-lbl">Savings Goal</label><input class="inp" type="number" value="1000"/></div>
-      <div><label class="field-lbl">Amount Saved</label><input class="inp" type="number" value="680"/></div>
+      <div class="form-2">
+      <div><label class="field-lbl">Savings Goal</label><input class="inp" type="number" id="sav-goal" placeholder="e.g. 1000"/></div>
+      <div><label class="field-lbl">Amount Saved</label><input class="inp" type="number" id="sav-saved" placeholder="0"/></div>
     </div>
-    <button class="btn-add" onclick="showToast('Savings updated! 💰','success')"><i class="fa fa-piggy-bank"></i>Update Savings</button>
+    <button class="btn-add" onclick="updateSavings()"><i class="fa fa-piggy-bank"></i>Update Savings</button>
     <div style="margin-top:16px">
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px"><span>Savings Progress</span><span style="color:var(--accent)">68%</span></div>
-      <div class="bar-track" style="height:11px;border-radius:6px"><div class="bar-fill" style="width:68%;background:linear-gradient(90deg,var(--accent),var(--sky))"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px"><span>Savings Progress</span><span style="color:var(--accent)" id="sav-pct-lbl">0%</span></div>
+      <div class="bar-track" style="height:11px;border-radius:6px"><div class="bar-fill" id="sav-bar" style="width:0%;background:linear-gradient(90deg,var(--accent),var(--sky))"></div></div>
     </div>
   </div>
 </div>
@@ -279,7 +333,6 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
     <div><h2 style="font-size:24px;font-weight:800">AI Chatbot</h2><div class="ai-status">● PocketSmart AI — Ready</div></div>
     <div style="display:flex;gap:8px">
       <button style="background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:7px 14px;color:var(--muted);font-size:12.5px;cursor:pointer" onclick="clearDemoChat()"><i class="fa fa-trash"></i> Clear</button>
-      <button id="tts-demo-btn" style="background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:7px 14px;color:var(--muted);font-size:12.5px;cursor:pointer" onclick="toggleDemoTTS()"><i class="fa fa-volume-high"></i> Voice On</button>
     </div>
   </div>
   <div class="qp-row">
@@ -290,7 +343,7 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
     <span class="qp" onclick="demoQuick(this)">📊 How can I save more?</span>
   </div>
   <div class="chat-msgs" id="chat-demo">
-    <div class="msg ai"><div class="msg-hd">🤖 PocketSmart AI</div>Hi! I'm your personal finance AI. You've spent $2,840 this month with $2,360 remaining. Your financial health score is 75 (Good)! 💚<br><br>Ask me anything — spending analysis, home decor ideas, party planning, jewelry picks, or savings advice! 💬</div>
+    <div class="msg ai"><div class="msg-hd">🤖 PocketSmart AI</div>Hi! I'm your personal finance AI. I've analyzed your budget and I'm ready to help you make smarter financial decisions! 💚<br><br>Ask me about spending analysis, home decor ideas, party planning, jewelry picks, or savings advice! 💬</div>
   </div>
   <div class="chat-input-row">
     <button class="mic-btn" id="mic-demo" onclick="toggleDemoMic()"><i class="fa fa-microphone"></i></button>
@@ -299,19 +352,64 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
   </div>
 </div>
 
-<!-- AI Analysis -->
+<!-- ══ AI Analysis — Enhanced ══ -->
 <div class="page" id="page-analysis">
-  <div class="page-header"><h2>AI Analysis</h2><p>Deep AI-powered insights into your spending</p></div>
-  <div class="focus-row">
-    <button class="focus-btn active" onclick="setDemoFocus(this)">🔍 General</button>
-    <button class="focus-btn" onclick="setDemoFocus(this)">💰 Savings</button>
-    <button class="focus-btn" onclick="setDemoFocus(this)">🍔 Food</button>
-    <button class="focus-btn" onclick="setDemoFocus(this)">🎮 Entertainment</button>
-    <button class="focus-btn" onclick="setDemoFocus(this)">🛍️ Shopping</button>
-    <button class="focus-btn" onclick="setDemoFocus(this)">📈 Investments</button>
+  <div class="page-header">
+    <h2>🧠 AI Analysis Studio</h2>
+    <p>Choose a powerful AI analysis mode to decode your financial patterns</p>
   </div>
-  <button class="run-btn" onclick="runDemoAnalysis()"><i class="fa fa-brain"></i> Run AI Analysis</button>
-  <div id="analysis-demo"></div>
+
+  <!-- Feature Selector Cards -->
+  <div class="analysis-features" style="grid-template-columns:repeat(4,1fr)">
+    <div class="feat-card selected" id="afc-mood" style="--fb:var(--accent);--fc:rgba(110,231,183,.06)" onclick="selectAnalysis('mood',this)">
+      <div class="fc-badge">LIVE</div>
+      <div class="fc-icon">😊</div>
+      <h4>Financial Mood Meter</h4>
+      <p>See how your real spending makes you feel — stressed, balanced, or thriving!</p>
+    </div>
+    <div class="feat-card" id="afc-dna" style="--fb:var(--purple);--fc:rgba(167,139,250,.06)" onclick="selectAnalysis('dna',this)">
+      <div class="fc-badge">HOT</div>
+      <div class="fc-icon">🧬</div>
+      <h4>Spend DNA Profile</h4>
+      <p>Your unique financial fingerprint — what type of spender are you really?</p>
+    </div>
+    <div class="feat-card" id="afc-burnrate" style="--fb:var(--rose);--fc:rgba(248,113,113,.06)" onclick="selectAnalysis('burnrate',this)">
+      <div class="fc-badge">NEW</div>
+      <div class="fc-icon">🔥</div>
+      <h4>Burn Rate Analyzer</h4>
+      <p>How fast are you burning through your budget? Get your daily runway score.</p>
+    </div>
+    <div class="feat-card" id="afc-timemachine" style="--fb:var(--gold);--fc:rgba(251,191,36,.06)" onclick="selectAnalysis('timemachine',this)">
+      <div class="fc-badge">NEW</div>
+      <div class="fc-icon">⏳</div>
+      <h4>Financial Time Machine</h4>
+      <p>See where your current habits lead in 1, 5, and 10 years — what's at stake!</p>
+    </div>
+    <div class="feat-card" id="afc-forecast" style="--fb:var(--sky);--fc:rgba(56,189,248,.06)" onclick="selectAnalysis('forecast',this)">
+      <div class="fc-icon">🔮</div>
+      <h4>30-Day Forecast</h4>
+      <p>AI predicts where your money goes by month end based on your real data</p>
+    </div>
+    <div class="feat-card" id="afc-alerts" style="--fb:var(--gold);--fc:rgba(251,191,36,.06)" onclick="selectAnalysis('alerts',this)">
+      <div class="fc-icon">🚨</div>
+      <h4>Smart Alerts</h4>
+      <p>Personalized warnings and savings opportunities from your actual spending</p>
+    </div>
+    <div class="feat-card" id="afc-challenges" style="--fb:var(--rose);--fc:rgba(248,113,113,.06)" onclick="selectAnalysis('challenges',this)">
+      <div class="fc-badge">FUN</div>
+      <div class="fc-icon">🏆</div>
+      <h4>Savings Challenges</h4>
+      <p>Gamified saving challenges tailored to your personal spending patterns</p>
+    </div>
+    <div class="feat-card" id="afc-general" style="--fb:var(--accent);--fc:rgba(110,231,183,.04)" onclick="selectAnalysis('general',this)">
+      <div class="fc-icon">📊</div>
+      <h4>Full Spending Report</h4>
+      <p>Comprehensive AI analysis of all your spending with action steps</p>
+    </div>
+  </div>
+
+  <button class="run-btn" onclick="runEnhancedAnalysis()"><i class="fa fa-brain"></i> Run AI Analysis</button>
+  <div id="analysis-output"></div>
 </div>
 
 <!-- Recommendations -->
@@ -381,75 +479,194 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif}
 </div><!-- /app -->
 
 <script>
-/* ══════════════════════════════════════════
-   AUTH GUARD — redirect to login.html if not logged in
-   Reads session that login.html wrote to localStorage
-══════════════════════════════════════════ */
+/* ══ State ══ */
+let CUR_USER = {name:'User',currency:'USD',currencySymbol:'$',monthlyIncome:0,monthlySavings:0};
+let userExpenses = [];
+let userSavingsGoal = 0;
+let userSavingsSaved = 0;
+const sym = () => CUR_USER.currencySymbol || '$';
+
 (function(){
   try{
-    const u = JSON.parse(localStorage.getItem('ps_user')||'null');
-    if(!u || !u.name){
-      window.location.href = 'login.html';
-      return;
-    }
-    // Populate sidebar user info with real logged-in name
+    const u=JSON.parse(localStorage.getItem('ps_user')||'null');
+    if(!u||!u.name){ window.location.href='login.html'; return; }
+    CUR_USER = {...CUR_USER,...u};
+    // Restore persisted expenses/savings from localStorage
+    const key = 'ps_data_'+(u.email||u.name);
+    const saved = JSON.parse(localStorage.getItem(key)||'{}');
+    if(saved.expenses) userExpenses = saved.expenses;
+    if(saved.savingsGoal !== undefined) userSavingsGoal = saved.savingsGoal;
+    else if(u.monthlySavings) userSavingsGoal = parseFloat(u.monthlySavings)||0;
+    if(saved.savingsSaved !== undefined) userSavingsSaved = saved.savingsSaved;
+
     document.getElementById('u-avatar').textContent = u.name[0].toUpperCase();
-    document.getElementById('u-name').textContent    = u.name;
-    if(u.username) document.getElementById('u-meta').textContent = '@'+u.username;
+    document.getElementById('u-name').textContent = u.name;
+    const sym2 = u.currencySymbol || '$';
+    const inc = u.monthlyIncome ? sym2+Number(u.monthlyIncome).toLocaleString() : sym2+'0';
+    document.getElementById('u-meta').textContent = (u.currency||'USD')+' • '+inc+'/mo';
+    document.querySelectorAll('.cur-sym').forEach(el=>el.textContent=sym2);
+    document.getElementById('dash-sub').textContent = 'Welcome back, '+u.name.split(' ')[0]+'! Here\'s your financial overview.';
+
+    // Populate savings fields from user data
+    if(userSavingsGoal) document.getElementById('sav-goal').value = userSavingsGoal;
+    if(userSavingsSaved) document.getElementById('sav-saved').value = userSavingsSaved;
+
+    refreshDashboard();
+    renderExpenses();
   }catch(e){
-    window.location.href = 'login.html';
+    console.error('PocketSmart init error:', e);
+    const u2 = localStorage.getItem('ps_user');
+    if(!u2){ sessionStorage.setItem('ps_loop_guard','1'); window.location.href='login.html'; }
   }
 })();
 
-/* ══ LOGOUT — clears session and goes back to login.html ══ */
+// Also guard the top-level redirect
+if(!localStorage.getItem('ps_user')){ sessionStorage.setItem('ps_loop_guard','1'); window.location.href='login.html'; }
+
+function saveUserData(){
+  try{
+    const u = CUR_USER;
+    const key = 'ps_data_'+(u.email||u.name);
+    localStorage.setItem(key, JSON.stringify({expenses:userExpenses, savingsGoal:userSavingsGoal, savingsSaved:userSavingsSaved}));
+  }catch(e){}
+}
+
+function refreshDashboard(){
+  const s = sym();
+  const income = parseFloat(CUR_USER.monthlyIncome)||0;
+  const spent = userExpenses.reduce((a,e)=>a+e.amt,0);
+  const remain = income - spent;
+  const savPct = userSavingsGoal>0 ? Math.min(100,Math.round(userSavingsSaved/userSavingsGoal*100)) : 0;
+
+  document.getElementById('d-income').textContent = s+income.toLocaleString();
+  document.getElementById('d-spent').textContent = s+spent.toFixed(2);
+  document.getElementById('d-remain').textContent = s+remain.toFixed(2);
+  document.getElementById('d-remain').style.color = remain<0?'var(--rose)':'var(--sky)';
+  document.getElementById('d-savings-pct').textContent = savPct+'%';
+  document.getElementById('d-savings-sub').textContent = userSavingsGoal>0
+    ? s+userSavingsSaved.toFixed(0)+' / '+s+userSavingsGoal.toLocaleString()+' goal'
+    : 'Set a savings goal';
+
+  // Category bars
+  const byCat = {};
+  userExpenses.forEach(e=>{ byCat[e.cat]=(byCat[e.cat]||0)+e.amt; });
+  const catMap = {Food:'food',Housing:'housing',Transport:'transport',Entertainment:'ent',Shopping:'shop'};
+  const maxCat = Math.max(...Object.values(byCat), income*0.01, 1);
+  Object.entries(catMap).forEach(([cat,id])=>{
+    const v = byCat[cat]||0;
+    const barEl = document.getElementById('bf-'+id);
+    const lblEl = document.getElementById('bar-'+id);
+    if(barEl) barEl.style.width = Math.min(100,Math.round(v/maxCat*100))+'%';
+    if(lblEl) lblEl.textContent = v>0 ? s+v.toFixed(0) : '—';
+  });
+
+  // Health score
+  let score = 100;
+  if(income > 0){
+    const r = spent/income;
+    score = r>1?10:r>0.9?30:r>0.7?55:r>0.5?75:95;
+  } else if(spent===0){ score=85; }
+  const label = score>=90?'Excellent':score>=70?'Good':score>=50?'Fair':'Poor';
+  const scoreColor = score>=70?'var(--accent)':score>=50?'var(--gold)':'var(--rose)';
+  document.getElementById('health-score').textContent = score;
+  const hlEl = document.getElementById('health-label');
+  if(hlEl){ hlEl.textContent=label; hlEl.style.color=scoreColor; }
+  const hsub = document.getElementById('health-sub');
+  if(hsub) hsub.textContent = income>0
+    ? 'Spending '+(spent/income*100).toFixed(1)+'% of your income'
+    : 'Set your monthly income to get started';
+  const arc = document.getElementById('health-arc');
+  if(arc) arc.setAttribute('stroke-dashoffset', (289-(289*score/100)).toFixed(1));
+  const halert = document.getElementById('health-alert');
+  if(halert){
+    if(score>=70){ halert.className='alert-ok'; halert.innerHTML='<i class="fa fa-check-circle"></i>'+label+' financial health'; }
+    else { halert.className='alert-ok'; halert.style.background='rgba(248,113,113,.1)'; halert.style.borderColor='rgba(248,113,113,.3)'; halert.style.color='var(--rose)'; halert.innerHTML='<i class="fa fa-triangle-exclamation"></i>Needs attention'; }
+  }
+
+  // Savings bar on Budget page
+  const savBar = document.getElementById('sav-bar');
+  const savPctLbl = document.getElementById('sav-pct-lbl');
+  if(savBar) savBar.style.width = savPct+'%';
+  if(savPctLbl) savPctLbl.textContent = savPct+'%';
+}
+
 function doLogout(){
   localStorage.removeItem('ps_user');
-  window.location.href = 'login.html';
+  window.location.href='login.html';
 }
 
-/* ══ Navigation ══ */
+/* ══ Navigation — only selected section opens ══ */
 function go(name, el) {
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.page').forEach(p=>{p.classList.remove('active');p.style.display='none';});
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('page-'+name).classList.add('active');
+  const pg = document.getElementById('page-'+name);
+  if(pg){ pg.style.display='block'; setTimeout(()=>pg.classList.add('active'),10); }
   if(el) el.classList.add('active');
   if(name==='recs') showRecs(document.querySelector('.rtab.active'),'general');
+  // Special: chat page needs flex
+  if(name==='chat') { pg.style.display='flex'; }
 }
+// Init display
+document.querySelectorAll('.page').forEach(p=>{ if(!p.classList.contains('active')) p.style.display='none'; });
 
 /* ══ Expenses ══ */
-const demoExpenses = [
-  {id:1,date:'2025-02-20',cat:'Housing',desc:'Monthly Rent',amt:1200},
-  {id:2,date:'2025-02-18',cat:'Food',desc:'Grocery shopping',amt:320},
-  {id:3,date:'2025-02-15',cat:'Transport',desc:'Uber rides',amt:340},
-  {id:4,date:'2025-02-12',cat:'Food',desc:'Restaurant dinner',amt:85},
-  {id:5,date:'2025-02-10',cat:'Entertainment',desc:'Netflix + Spotify',amt:45},
-];
+
 function renderExpenses(){
   const tbody=document.getElementById('exp-body');
-  tbody.innerHTML=demoExpenses.map(e=>`<tr><td style="color:var(--muted)">${e.date}</td><td><span class="cat-badge">${e.cat}</span></td><td>${e.desc}</td><td style="font-weight:600;color:var(--rose)">$${e.amt.toFixed(2)}</td><td><button class="del-btn" onclick="delDemoExp(${e.id})"><i class="fa fa-trash"></i></button></td></tr>`).join('');
-  document.getElementById('exp-count').textContent=demoExpenses.length+' expenses';
+  if(!userExpenses.length){
+    tbody.innerHTML=`<tr><td colspan="5" style="text-align:center;padding:28px;color:var(--muted)">No expenses yet — add your first one above! 💸</td></tr>`;
+    document.getElementById('exp-count').textContent='0 expenses';
+    return;
+  }
+  tbody.innerHTML=userExpenses.map(e=>`<tr><td style="color:var(--muted)">${e.date}</td><td><span class="cat-badge">${e.cat}</span></td><td>${e.desc}</td><td style="font-weight:600;color:var(--rose)">${sym()}${e.amt.toFixed(2)}</td><td><button class="del-btn" onclick="delExpense('${e.id}')"><i class="fa fa-trash"></i></button></td></tr>`).join('');
+  document.getElementById('exp-count').textContent=userExpenses.length+' expense'+(userExpenses.length!==1?'s':'');
 }
-function delDemoExp(id){const i=demoExpenses.findIndex(e=>e.id===id);if(i>-1){demoExpenses.splice(i,1);renderExpenses();showToast('Expense deleted','success');}}
-function addDemoExpense(){demoExpenses.unshift({id:Date.now(),date:'2025-02-22',cat:'Shopping',desc:'New item',amt:49.99});renderExpenses();showToast('Expense added! ✅','success');}
+function delExpense(id){
+  const i=userExpenses.findIndex(e=>e.id===id);
+  if(i>-1){ userExpenses.splice(i,1); saveUserData(); renderExpenses(); refreshDashboard(); showToast('Expense deleted','success'); }
+}
+function addDemoExpense(){
+  const cat=document.getElementById('exp-cat').value;
+  const amt=parseFloat(document.getElementById('exp-amt').value);
+  const desc=document.getElementById('exp-desc').value.trim()||'New expense';
+  const date=document.getElementById('exp-date').value||new Date().toISOString().split('T')[0];
+  if(!amt||amt<=0){ showToast('Please enter a valid amount','warn'); return; }
+  userExpenses.unshift({id:'e'+Date.now(),date,cat,desc,amt});
+  saveUserData();
+  renderExpenses();
+  refreshDashboard();
+  document.getElementById('exp-amt').value='';
+  document.getElementById('exp-desc').value='';
+  showToast('Expense added! ✅','success');
+}
+function updateSavings(){
+  const goal=parseFloat(document.getElementById('sav-goal').value)||0;
+  const saved=parseFloat(document.getElementById('sav-saved').value)||0;
+  userSavingsGoal=goal; userSavingsSaved=saved;
+  saveUserData(); refreshDashboard(); showToast('Savings updated! 💰','success');
+}
+// Set today's date
+document.getElementById('exp-date').value=new Date().toISOString().split('T')[0];
 renderExpenses();
 
 /* ══ Chat ══ */
-const demoReplies={
-  analyze:'📊 **Spending Analysis**\n\nYour total spend is $2,840 (54.6% of income) — you\'re in the **Good** zone! 💚\n\n**Top observations:**\n• Housing at $1,200 is your biggest expense (42%)\n• Food spending ($820) is slightly high — budget was $900 ✅\n• Entertainment ($280) close to $300 limit — watch this!\n\n**Recommendations:**\n1. 💡 Cook 2 more meals/week → save ~$120/month\n2. 🎮 Audit subscriptions → potential $40 savings\n3. 🚗 Use public transit 2x/week → save ~$80/month\n\n🌟 You\'re on track to hit your $1,000 savings goal!',
-  home:'🏠 **Home Decor Ideas for $2,360 remaining**\n\n1. **IKEA KALLAX Shelf** — $89.99\n2. **Amazon Basics Floor Lamp** — $34.99\n3. **Wayfair Area Rug (5\'x8\')** — $129-$189\n4. **IKEA LACK Side Table** — $19.99\n5. **Amazon Canvas Wall Art Set** — $39.99\n\n💡 Tip: Shop IKEA\'s "As-Is" section for 30-50% off!',
-  party:'🎉 **Party Budget Plan — $1,500 for 40 guests**\n\n• 🏛️ Venue/Decor: $300 (20%)\n• 🍕 Food & Drinks: $600 (40%)\n• 🎊 Decorations: $225 (15%)\n• 🎵 Entertainment: $225 (15%)\n• 🎁 Misc/Buffer: $150 (10%)\n\n**Tips:** Costco catering, DIY balloon arch, Canva invites!',
-  jewelry:'💎 **Jewelry Picks for Navy Blue — $300 budget**\n\n1. **Pearl Drop Earrings** — $45-$80 (Zales/Amazon)\n2. **Gold Chain Bracelet** — $35-$60 (Mejuri)\n3. **Sapphire Stud Earrings** — $60-$120 (Kay/Etsy)\n4. **Delicate Gold Necklace** — $40-$80 (Mejuri)\n\n💡 Check Mejuri.com for quality pieces under $100!',
-  save:'💰 **How to Save More**\n\n**Current savings rate: 13% ($680/$5,200)**\nTarget: 20% = $1,040/month — Gap: $360/month\n\n1. 🍔 Reduce Food by $150 → meal prep 3x/week\n2. 🎮 Cut Entertainment by $80 → cancel unused subs\n3. 🚗 Transport savings of $80 → carpool 2x/week\n4. 🛍️ 24-hour rule on Shopping → saves ~$50\n\n**Total potential savings: $360/month** 🎯',
-  default:'💬 Based on your budget data, you\'re spending $2,840 of your $5,200 income this month.\n\nYour **financial health score is 75/100 (Good)**!\n\nAsk me about:\n• 📊 Spending analysis\n• 💡 Savings recommendations\n• 🏠 Home decor ideas\n• 🎉 Party planning\n• 💎 Jewelry picks'
-};
 function getDemoReply(msg){
-  const m=msg.toLowerCase();
-  if(m.includes('analyz')||m.includes('spend'))return demoReplies.analyze;
-  if(m.includes('home')||m.includes('decor')||m.includes('furniture'))return demoReplies.home;
-  if(m.includes('party')||m.includes('event'))return demoReplies.party;
-  if(m.includes('jewel')||m.includes('necklace')||m.includes('ring'))return demoReplies.jewelry;
-  if(m.includes('save')||m.includes('saving'))return demoReplies.save;
-  return demoReplies.default;
+  const m=msg.toLowerCase(), s=sym(), {income,spent,remain,byCat,topCat}=getUserStats();
+  const catLines=Object.entries(byCat).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([c,v])=>`• ${c}: ${s}${v.toFixed(0)}`).join('\n')||'• Add some expenses to see your breakdown!';
+  const replies={
+    analyze:`📊 **Spending Analysis**\n\nYour total spend is ${s}${spent.toFixed(0)} of ${s}${income.toLocaleString()} income.\n\n**Top categories:**\n${catLines}\n\n**Quick wins:**\n1. 💡 Cut top category by 15% → save ${s}${topCat?Math.round(topCat[1]*0.15):50}/month\n2. 🎮 Audit subscriptions → cancel any unused ones\n3. 💰 Auto-transfer ${s}${Math.round(income*0.05||100)}/month to savings\n\n🌟 ${remain>=0?'You have '+s+remain.toFixed(0)+' remaining — great work!':'Over budget — let\'s find some cuts!'}`,
+    home:`🏠 **Home Decor Ideas**\n\n1. **Modern Shelving Unit** — ${s}89\n2. **LED Floor Lamp** — ${s}35\n3. **Area Rug (5'x8')** — ${s}149\n4. **Floating Wall Shelves** — ${s}39\n5. **Canvas Wall Art Set** — ${s}40\n\n💡 Tip: Shop during sales for 30-50% off!`,
+    party:`🎉 **Party Budget Plan**\n\n• 🏛️ Venue/Setup: 20%\n• 🍕 Food & Drinks: 40%\n• 🎊 Decorations: 15%\n• 🎵 Entertainment: 15%\n• 🎁 Misc/Buffer: 10%\n\n**Tips:** Wholesale catering, DIY decor, Canva invites!`,
+    jewelry:`💎 **Jewelry Picks**\n\n1. **Pearl Drop Earrings** — ${s}65\n2. **Gold Chain Bracelet** — ${s}55\n3. **Sapphire Stud Earrings** — ${s}90\n4. **Delicate Gold Necklace** — ${s}80\n\n💡 Check Mejuri.com for quality under ${s}100!`,
+    save:`💰 **How to Save More**\n\n1. 🍔 Meal prep 3x/week → save on food costs\n2. 🎮 Cancel 2 unused subscriptions\n3. 🚗 Use public transit 2x/week\n4. 🛍️ Apply the 24-hour rule for any purchase > ${s}50\n\n**Your savings potential: ${s}${Math.round(income*0.1||200)}/month** 🎯`,
+    default:`💬 I can help you with:\n\n• 📊 Analyze my spending\n• 💡 How to save more\n• 🏠 Home decor ideas\n• 🎉 Party planning tips\n• 💎 Jewelry picks\n\nJust ask anything!`
+  };
+  if(m.includes('analyz')||m.includes('spend'))return replies.analyze;
+  if(m.includes('home')||m.includes('decor')||m.includes('furniture'))return replies.home;
+  if(m.includes('party')||m.includes('event'))return replies.party;
+  if(m.includes('jewel')||m.includes('necklace')||m.includes('ring'))return replies.jewelry;
+  if(m.includes('save')||m.includes('saving'))return replies.save;
+  return replies.default;
 }
 function addMsg(text,role){
   const c=document.getElementById('chat-demo'),d=document.createElement('div');
@@ -462,23 +679,274 @@ function addTyping(){const c=document.getElementById('chat-demo'),d=document.cre
 function sendDemoChat(){const inp=document.getElementById('demo-input'),msg=inp.value.trim();if(!msg)return;inp.value='';addMsg(msg,'user');addTyping();setTimeout(()=>{document.getElementById('typing-indicator')?.remove();addMsg(getDemoReply(msg),'ai');},1200);}
 function demoQuick(el){document.getElementById('demo-input').value=el.textContent.trim().replace(/^[^\w]*/,'');sendDemoChat();}
 function clearDemoChat(){document.getElementById('chat-demo').innerHTML='<div class="msg ai"><div class="msg-hd">🤖 PocketSmart AI</div>Chat cleared! How can I help you today? 💬</div>';}
-let demoTTS=false;
-function toggleDemoTTS(){demoTTS=!demoTTS;const btn=document.getElementById('tts-demo-btn');btn.innerHTML=demoTTS?'<i class="fa fa-volume-high"></i> Voice On':'<i class="fa fa-volume-xmark"></i> Voice Off';btn.style.color=demoTTS?'var(--accent)':'';showToast(demoTTS?'🔊 Voice output enabled':'🔇 Voice output off','success');}
 let demoMicOn=false;
 function toggleDemoMic(){demoMicOn=!demoMicOn;const btn=document.getElementById('mic-demo');btn.style.color=demoMicOn?'var(--rose)':'';btn.style.borderColor=demoMicOn?'var(--rose)':'';btn.innerHTML=demoMicOn?'<i class="fa fa-stop"></i>':'<i class="fa fa-microphone"></i>';if(demoMicOn){showToast('🎙️ Listening... (demo mode)','success');setTimeout(()=>{demoMicOn=false;btn.style.color='';btn.style.borderColor='';btn.innerHTML='<i class="fa fa-microphone"></i>';document.getElementById('demo-input').value='Analyze my spending patterns';},2000);}}
 
-/* ══ Analysis ══ */
-function setDemoFocus(btn){document.querySelectorAll('.focus-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
-const analysisTexts={
-  '🔍 General':`📊 SPENDING ANALYSIS — General Overview\n\n💡 Key Observations:\nYou've spent $2,840 of your $5,200 income (54.6%). This puts you in the "Good" financial health zone!\n\n⚠️ Top 3 Concerns:\n1. Food ($820) is approaching your $900 limit — you have $80 left\n2. Entertainment ($280) is close to your $300 cap\n3. No emergency fund tracked — consider adding this category\n\n💡 Actionable Recommendations:\n1. Meal prep 2x/week → save $120/month on food\n2. Cancel unused subscriptions → save $35-$50/month\n3. Set up auto-transfer of $200/paycheck to savings\n\n🏆 Health Score: 75/100 (Good)\nSmall consistent changes add up — $360 more saved/month = $4,320/year!`,
-  '💰 Savings':`💰 SAVINGS ANALYSIS\n\nCurrent savings rate: 13.1% ($680/$5,200)\nTarget for financial health: 20% ($1,040/month)\nGap to close: $360/month\n\n⚠️ Concerns:\n1. Savings goal ($1,000) is only 19% of income\n2. No separate emergency fund\n3. No investment contributions tracked\n\n💡 Savings Boosters:\n1. Round up purchases → auto-save ~$45/month\n2. 50/30/20 rule: needs/wants/savings\n3. One no-spend day/week → saves $200-$300/month\n\n🌟 If you save $360 more/month, you'll have an extra $4,320 by year end!`
-};
-function runDemoAnalysis(){
-  const active=document.querySelector('.focus-btn.active');
-  const focus=active?.textContent||'🔍 General';
-  const el=document.getElementById('analysis-demo');
-  el.innerHTML='<div style="display:flex;align-items:center;gap:10px;color:var(--muted);padding:20px"><div style="width:18px;height:18px;border:2px solid var(--surface2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite"></div>Running AI analysis...</div>';
-  setTimeout(()=>{const txt=analysisTexts[focus]||analysisTexts['🔍 General'];el.innerHTML=`<div class="analysis-box">${txt}</div>`;},1500);
+/* ══ AI Analysis — Enhanced with Real User Data ══ */
+let selectedAnalysisMode = 'mood';
+
+function getUserStats(){
+  const income = parseFloat(CUR_USER.monthlyIncome)||0;
+  const spent = userExpenses.reduce((a,e)=>a+e.amt,0);
+  const remain = income - spent;
+  const byCat = {};
+  userExpenses.forEach(e=>{ byCat[e.cat]=(byCat[e.cat]||0)+e.amt; });
+  const savPct = userSavingsGoal>0 ? Math.min(100,Math.round(userSavingsSaved/userSavingsGoal*100)) : 0;
+  const topCat = Object.entries(byCat).sort((a,b)=>b[1]-a[1])[0];
+  return {income,spent,remain,byCat,savPct,topCat};
+}
+
+function selectAnalysis(mode, el){
+  selectedAnalysisMode = mode;
+  document.querySelectorAll('.feat-card').forEach(c=>c.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('analysis-output').innerHTML = '';
+}
+
+function runEnhancedAnalysis(){
+  const out = document.getElementById('analysis-output');
+  out.innerHTML = `<div style="display:flex;align-items:center;gap:12px;color:var(--muted);padding:24px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)"><div style="width:20px;height:20px;border:2px solid var(--surface2);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite;flex-shrink:0"></div><span>AI is analyzing your financial data...</span></div>`;
+  setTimeout(()=>{
+    switch(selectedAnalysisMode){
+      case 'mood': renderMoodMeter(); break;
+      case 'dna': renderSpendDNA(); break;
+      case 'forecast': renderForecast(); break;
+      case 'alerts': renderSmartAlerts(); break;
+      case 'challenges': renderChallenges(); break;
+      case 'burnrate': renderBurnRate(); break;
+      case 'timemachine': renderTimeMachine(); break;
+      case 'general': renderGeneralAnalysis(); break;
+    }
+  }, 1400);
+}
+
+function renderMoodMeter(){
+  const s=sym(), {income,spent,savPct,byCat}=getUserStats();
+  const spentPct = income>0 ? spent/income*100 : 0;
+  const moodScore = Math.max(5, Math.min(95, income>0 ? (100-spentPct+savPct*0.3) : 50));
+  let verdict, vBg, vColor, emoji;
+  if(moodScore>70){ verdict="You're thriving! 🌟 Excellent spending discipline."; vBg='rgba(110,231,183,.1)'; vColor='var(--accent)'; emoji='😄'; }
+  else if(moodScore>45){ verdict="Balanced & aware! 👍 A few tweaks can move you up."; vBg='rgba(251,191,36,.1)'; vColor='var(--gold)'; emoji='😊'; }
+  else { verdict="Feeling the pressure 😓 Let's find savings opportunities."; vBg='rgba(248,113,113,.1)'; vColor='var(--rose)'; emoji='😰'; }
+  const foodAmt=byCat['Food']||0, entAmt=byCat['Entertainment']||0;
+  const foodPts=foodAmt>0&&income>0?(foodAmt/income<0.15?'+20 pts 💚':'-10 pts ❤️'):'—';
+  const entPts=entAmt>0&&income>0?(entAmt/income<0.1?'+15 pts 💚':'-10 pts ❤️'):'—';
+  document.getElementById('analysis-output').innerHTML=`
+  <div class="mood-meter">
+    <div class="mood-title"><span style="font-size:22px">${emoji}</span> Financial Mood Meter</div>
+    <div class="mood-sub">Computed from your income-to-spend ratio, savings progress & category discipline</div>
+    <div class="mood-track"><div class="mood-needle" id="mood-needle" style="left:0%"></div></div>
+    <div class="mood-labels"><span>😰 Stressed</span><span>😊 Balanced</span><span>😄 Thriving</span></div>
+    <div class="mood-verdict" style="background:${vBg};border:1px solid ${vColor}30;color:${vColor}">${verdict}</div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <div class="card-title">📈 What's Affecting Your Mood Score</div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:11px;background:var(--surface2);border-radius:10px"><span style="font-size:13px">💼 Income tracked</span><span style="color:var(--accent);font-weight:700">${income>0?'+25 pts':'Set income first'}</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:11px;background:var(--surface2);border-radius:10px"><span style="font-size:13px">💰 Spending ${spentPct.toFixed(0)}% of income</span><span style="color:${spentPct<60?'var(--accent)':spentPct<80?'var(--gold)':'var(--rose)'};font-weight:700">${spentPct<60?'+30 pts':spentPct<80?'+10 pts':'-15 pts'}</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:11px;background:var(--surface2);border-radius:10px"><span style="font-size:13px">🍔 Food spending control</span><span style="font-weight:700;color:var(--muted)">${foodPts}</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:11px;background:var(--surface2);border-radius:10px"><span style="font-size:13px">🎯 Savings goal progress (${savPct}%)</span><span style="color:${savPct>50?'var(--accent)':'var(--gold)'};font-weight:700">${savPct>50?'+20 pts':'+5 pts'}</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:11px;background:var(--surface2);border-radius:10px"><span style="font-size:13px">🎮 Entertainment discipline</span><span style="font-weight:700;color:var(--muted)">${entPts}</span></div>
+    </div>
+  </div>`;
+  setTimeout(()=>{ const n=document.getElementById('mood-needle'); if(n) n.style.left=moodScore+'%'; },100);
+}
+
+function renderSpendDNA(){
+  const s=sym(), {income,spent,byCat,topCat}=getUserStats();
+  if(!spent){ document.getElementById('analysis-output').innerHTML=`<div class="card"><div style="text-align:center;padding:30px;color:var(--muted)">Add some expenses first to see your Spend DNA profile! 🧬</div></div>`; return; }
+  const profiles={Housing:{name:'The Nester 🏠',desc:'Comfort-first mindset — stability is your priority'},Food:{name:'The Foodie 🍔',desc:'You invest in experiences and quality meals'},Transport:{name:'The Mover 🚗',desc:'Always on the go — mobility shapes your budget'},Entertainment:{name:'The Enjoyer 🎮',desc:'Life is for living — you value experiences'},Shopping:{name:'The Curator 🛍️',desc:'Intentional about your style and possessions'}};
+  const profileType=topCat?(profiles[topCat[0]]||{name:'The Balanced 🎯',desc:'Evenly distributed across all categories'}):{name:'The Beginner 🌱',desc:'Just getting started on your financial journey'};
+  const catColors={Food:'var(--gold)',Housing:'var(--purple)',Transport:'var(--sky)',Entertainment:'var(--rose)',Shopping:'var(--accent)'};
+  const catIcons={Food:'🍔',Housing:'🏠',Transport:'🚗',Entertainment:'🎮',Shopping:'🛍️'};
+  const dnaItems=Object.entries(byCat).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([cat,amt])=>{
+    const pct=Math.round(amt/spent*100);
+    return dnaItem(pct,cat,catColors[cat]||'var(--accent)',s+amt.toFixed(0),catIcons[cat]||'💰');
+  }).join('');
+  document.getElementById('analysis-output').innerHTML=`
+  <div class="card">
+    <div class="card-title">🧬 Your Spend DNA Profile</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:18px">Your unique financial fingerprint — ${userExpenses.length} transaction${userExpenses.length!==1?'s':''} analyzed</p>
+    <div style="text-align:center;margin-bottom:20px">
+      <div style="display:inline-flex;align-items:center;gap:12px;padding:14px 24px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);border-radius:14px">
+        <span style="font-size:32px">${(profileType.name.match(/\p{Emoji}/u)||['🎯'])[0]}</span>
+        <div style="text-align:left">
+          <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--purple)">${profileType.name.replace(/\p{Emoji}/gu,'').trim()}</div>
+          <div style="font-size:12px;color:var(--muted)">${profileType.desc}</div>
+        </div>
+      </div>
+    </div>
+    <div class="dna-wrap">${dnaItems||'<p style="color:var(--muted);font-size:13px;grid-column:1/-1">Add more expenses to see breakdown</p>'}</div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <div class="card-title">💡 DNA Insights</div>
+    <div style="font-size:13.5px;line-height:2;color:var(--text)">
+      🔍 <b>Spender Type:</b> ${profileType.name}<br>
+      💪 <b>Strength:</b> ${spent/income<0.7?'Great income-to-spend ratio — well under 70%':'Tracking expenses is step one — well done!'}<br>
+      ⚡ <b>Opportunity:</b> ${topCat?'Biggest category is '+topCat[0]+' ('+Math.round(topCat[1]/spent*100)+'%) — small cuts here have big impact':'Keep adding expenses to reveal opportunities'}<br>
+      🎯 <b>Goal Fit:</b> ${userSavingsGoal>0?'Savings target of '+s+userSavingsGoal.toLocaleString()+' is in sight':'Set a savings goal to get personalized advice'}<br>
+      🌟 <b>Pattern:</b> ${userExpenses.length>3?'Your top 3 categories account for '+((Object.values(byCat).sort((a,b)=>b-a).slice(0,3).reduce((a,b)=>a+b,0)/spent*100)|0)+'% of spending — focus there first!':'Track at least 5 expenses for deeper patterns'}
+    </div>
+  </div>`;
+}
+
+function dnaItem(pct,label,color,val,icon){
+  const r=16,circ=2*Math.PI*r,dash=circ*(pct/100);
+  return `<div class="dna-item"><div class="dna-ring"><svg width="44" height="44" viewBox="0 0 44 44" style="transform:rotate(-90deg)"><circle cx="22" cy="22" r="${r}" fill="none" stroke="var(--surface3)" stroke-width="4"/><circle cx="22" cy="22" r="${r}" fill="none" stroke="${color}" stroke-width="4" stroke-linecap="round" stroke-dasharray="${dash} ${circ}"/></svg><div class="dna-ring-label" style="color:${color}">${pct}%</div></div><div class="dna-info"><h5>${icon} ${label}</h5><span>${val}/mo</span></div></div>`;
+}
+
+function renderForecast(){
+  const s=sym(), {income,spent}=getUserStats();
+  const today=new Date(), daysInMonth=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
+  const dayOfMonth=today.getDate(), daysLeft=daysInMonth-dayOfMonth;
+  const daily=dayOfMonth>0?spent/dayOfMonth:0;
+  const proj=Math.round(daily*daysInMonth), projSav=income-proj;
+  const onTrackColor=proj<=income?'var(--accent)':'var(--rose)';
+  document.getElementById('analysis-output').innerHTML=`
+  <div class="card">
+    <div class="card-title">🔮 30-Day Financial Forecast</div>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:18px">Based on ${dayOfMonth} days of data — ${s}${daily.toFixed(0)}/day average spend</p>
+    <div class="forecast-wrap"><div class="forecast-timeline">
+      <div class="ft-point"><div class="ft-dot" style="background:var(--accent)"></div><div class="ft-lbl">Day 1<br>Start</div><div class="ft-val" style="color:var(--accent)">${s}0</div></div>
+      <div class="ft-point"><div class="ft-dot" style="background:var(--sky)"></div><div class="ft-lbl">Day ${dayOfMonth}<br>Today</div><div class="ft-val" style="color:var(--sky)">${s}${spent.toFixed(0)}</div></div>
+      <div class="ft-point"><div class="ft-dot" style="background:var(--gold)"></div><div class="ft-lbl">Day ${Math.min(22,daysInMonth)}<br>Midpoint</div><div class="ft-val" style="color:var(--gold)">${s}${Math.round(daily*Math.min(22,daysInMonth)).toLocaleString()}</div></div>
+      <div class="ft-point"><div class="ft-dot" style="background:${onTrackColor}"></div><div class="ft-lbl">Day ${daysInMonth}<br>Projected</div><div class="ft-val" style="color:${onTrackColor}">${s}${proj.toLocaleString()}</div></div>
+    </div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px">
+      <div style="background:var(--surface2);padding:14px;border-radius:11px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Daily Average</div><div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--sky)">${s}${daily.toFixed(0)}</div></div>
+      <div style="background:var(--surface2);padding:14px;border-radius:11px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Projected Spend</div><div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:${onTrackColor}">${s}${proj.toLocaleString()}</div></div>
+      <div style="background:var(--surface2);padding:14px;border-radius:11px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:4px">Projected Savings</div><div style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:${projSav>=0?'var(--accent)':'var(--rose)'}">${s}${projSav.toLocaleString()}</div></div>
+    </div>
+    <div style="margin-top:16px;padding:14px;background:rgba(110,231,183,.06);border:1px solid rgba(110,231,183,.2);border-radius:11px;font-size:13px;line-height:1.7">
+      🤖 <b>AI Assessment:</b> ${income>0?`At your current rate you'll end the month with <b>${s}${projSav.toLocaleString()} ${projSav>=0?'saved':'over budget'}</b>. ${projSav>=0?'You\'re on pace to hit your savings goal! 🎯':`Cut ${s}${Math.abs(projSav).toLocaleString()} from flexible categories to balance out.`}`:'Set your monthly income to get a personalized forecast. 📊'}
+    </div>
+  </div>`;
+}
+
+function renderSmartAlerts(){
+  const s=sym(), {income,spent,remain,byCat}=getUserStats();
+  const alerts=[];
+  if(!income){ alerts.push({type:'warn',icon:'🟡',title:'Income not set',body:'Set your monthly income to unlock personalized budget alerts.'}); }
+  if(income>0){
+    const pct=spent/income*100;
+    if(pct>90) alerts.push({type:'danger',icon:'🔴',title:'Budget almost exhausted!',body:`You've spent ${pct.toFixed(0)}% of your income. Only ${s}${remain.toFixed(0)} left! Consider a spending freeze on non-essentials.`});
+    else if(pct>70) alerts.push({type:'warn',icon:'🟡',title:'Spending rate is high',body:`At ${pct.toFixed(0)}% used, limit discretionary spending for the rest of the month.`});
+    else alerts.push({type:'good',icon:'🟢',title:'Spending under control',body:`You've used ${pct.toFixed(0)}% of your income — great discipline! ${s}${remain.toFixed(0)} left.`});
+  }
+  const foodAmt=byCat['Food']||0;
+  if(foodAmt>0&&income>0){
+    const fp=foodAmt/income*100;
+    if(fp>20) alerts.push({type:'danger',icon:'🔴',title:'Food spending at '+fp.toFixed(0)+'%',body:`Food is over the 20% benchmark. Meal prepping on weekends can cut this by ${s}${Math.round(foodAmt*0.25)}/month.`});
+    else alerts.push({type:'good',icon:'💡',title:'Food budget healthy',body:`Food is only ${fp.toFixed(0)}% of income — well managed!`});
+  }
+  if(remain>0&&income>0){ const t=Math.round(remain*0.5); alerts.push({type:'good',icon:'💡',title:'Savings opportunity detected',body:`You have ${s}${remain.toFixed(0)} available. Moving ${s}${t} to savings now would boost your rate by ${(t/income*100).toFixed(0)}%!`}); }
+  if(!userExpenses.length) alerts.push({type:'warn',icon:'🟡',title:'No expenses tracked yet',body:'Start logging expenses to unlock AI anomaly detection and budget alerts.'});
+  if(userExpenses.length>=2){ const avg=userExpenses.slice(0,3).reduce((a,e)=>a+e.amt,0)/Math.min(3,userExpenses.length); alerts.push({type:'info',icon:'📊',title:'Recent spending trend',body:`Your recent expenses averaged ${s}${avg.toFixed(0)} per entry. Staying mindful of each transaction builds lasting habits!`}); }
+  document.getElementById('analysis-output').innerHTML=`<div class="card"><div class="card-title">🚨 Smart Financial Alerts</div><p style="font-size:12.5px;color:var(--muted);margin-bottom:6px">Personalized alerts based on your real spending data</p><div class="alerts-wrap">${alerts.map(a=>`<div class="smart-alert ${a.type==='info'?'good':a.type}"><div class="al-icon">${a.icon}</div><div><strong>${a.title}</strong>${a.body}</div></div>`).join('')}</div></div>`;
+}
+
+function renderChallenges(){
+  const s=sym(), {income,spent,byCat}=getUserStats();
+  const foodAmt=byCat['Food']||0, transAmt=byCat['Transport']||0, savChal=Math.round(income*0.05)||100;
+  document.getElementById('analysis-output').innerHTML=`
+  <div class="card">
+    <div class="card-title">🏆 Personalized Savings Challenges</div>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:4px">AI-curated challenges based on your spending patterns — start one today!</p>
+    <div class="challenge-grid">
+      <div class="challenge-card" style="--ch-c:var(--gold)">
+        <div class="ch-title">🍔 No-Restaurant Week</div>
+        <div class="ch-desc">Cook at home for 7 days. Based on your food spending, you could save ${s}${Math.round((foodAmt||200)*0.3)}+ this week alone.</div>
+        <span class="ch-reward">🥇 ${s}${Math.round((foodAmt||200)*0.3)} saved</span>
+        <div class="ch-prog"><div class="ch-prog-lbl"><span>Day 0/7</span><span>Start today!</span></div><div class="ch-prog-bar"><div class="ch-prog-fill" style="width:0%;background:var(--gold)"></div></div></div>
+      </div>
+      <div class="challenge-card" style="--ch-c:var(--sky)">
+        <div class="ch-title">🚇 Green Commute Week</div>
+        <div class="ch-desc">Use public transit or walk for 5 days. Cut your transport bill by ${s}${Math.round((transAmt||100)*0.4)} easily.</div>
+        <span class="ch-reward">🥈 ${s}${Math.round((transAmt||100)*0.4)} saved</span>
+        <div class="ch-prog"><div class="ch-prog-lbl"><span>Not started</span><span>0%</span></div><div class="ch-prog-bar"><div class="ch-prog-fill" style="width:0%;background:var(--sky)"></div></div></div>
+      </div>
+      <div class="challenge-card" style="--ch-c:var(--purple)">
+        <div class="ch-title">📱 Subscription Audit</div>
+        <div class="ch-desc">List every recurring charge and cancel anything unused. Most people find 3-4 forgotten ones worth ${s}40+/month.</div>
+        <span class="ch-reward">🥉 ${s}40-80 saved</span>
+        <div class="ch-prog"><div class="ch-prog-lbl"><span>Ready to start?</span><span>0%</span></div><div class="ch-prog-bar"><div class="ch-prog-fill" style="width:0%;background:var(--purple)"></div></div></div>
+      </div>
+      <div class="challenge-card" style="--ch-c:var(--accent)">
+        <div class="ch-title">💰 Round-Up Saver</div>
+        <div class="ch-desc">For 30 days, round every purchase up and save the difference. Small amounts compound into real savings.</div>
+        <span class="ch-reward">⭐ ${s}${savChal} potential</span>
+        <div class="ch-prog"><div class="ch-prog-lbl"><span>Day 0/30</span><span>0%</span></div><div class="ch-prog-bar"><div class="ch-prog-fill" style="width:0%;background:var(--accent)"></div></div></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding:14px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:11px;font-size:13px">
+      🏆 <b>Complete all 4 challenges</b> and build the habit loop that turns good intentions into real savings over time!
+    </div>
+  </div>`;
+}
+
+function renderBurnRate(){
+  const s=sym(), {income,spent}=getUserStats();
+  const today=new Date(), daysInMonth=new Date(today.getFullYear(),today.getMonth()+1,0).getDate();
+  const dayOfMonth=today.getDate(), daysLeft=daysInMonth-dayOfMonth;
+  const dailyBudget=income>0?(income/daysInMonth).toFixed(0):0;
+  const dailyActual=dayOfMonth>0?(spent/dayOfMonth).toFixed(0):0;
+  const burnRatio=dailyBudget>0?(dailyActual/dailyBudget*100).toFixed(0):0;
+  const statusColor=burnRatio<100?'var(--accent)':burnRatio<120?'var(--gold)':'var(--rose)';
+  document.getElementById('analysis-output').innerHTML=`
+  <div class="card">
+    <div class="card-title">🔥 Money Burn Rate Analyzer</div>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:18px">How fast are you burning through your budget? Real-time runway analysis.</p>
+    <div style="text-align:center;margin-bottom:24px;padding:24px;background:var(--surface2);border-radius:14px">
+      <div style="font-size:48px;margin-bottom:8px">${burnRatio<80?'🚀':burnRatio<100?'✈️':burnRatio<130?'🔥':'💥'}</div>
+      <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:${statusColor}">${burnRatio}%</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px">of ideal daily burn rate ${burnRatio<100?'🟢':burnRatio<120?'🟡':'🔴'}</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+      <div style="background:var(--surface2);padding:16px;border-radius:12px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Ideal Daily Budget</div><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--accent)">${s}${dailyBudget}</div></div>
+      <div style="background:var(--surface2);padding:16px;border-radius:12px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Actual Daily Spend</div><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:${statusColor}">${s}${dailyActual}</div></div>
+      <div style="background:var(--surface2);padding:16px;border-radius:12px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Days Elapsed</div><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--sky)">${dayOfMonth}</div></div>
+      <div style="background:var(--surface2);padding:16px;border-radius:12px;text-align:center"><div style="font-size:11px;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Days Remaining</div><div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--purple)">${daysLeft}</div></div>
+    </div>
+    <div style="padding:14px;background:rgba(110,231,183,.06);border:1px solid rgba(110,231,183,.2);border-radius:11px;font-size:13px;line-height:1.7">
+      💡 <b>Runway Advice:</b> ${burnRatio<100?`You're burning budget ${(100-burnRatio)}% <b>slower than planned</b> — you'll have ${s}${Math.round((dailyBudget-dailyActual)*daysLeft)} extra headroom! 🎉`:burnRatio<120?`Slightly over the ideal rate. Cut ${s}${Math.round(dailyActual-dailyBudget)} per day to get back on track.`:`High burn rate! Reduce daily spending by ${s}${Math.round(dailyActual-dailyBudget)} to avoid a month-end shortfall.`}
+    </div>
+  </div>`;
+}
+
+function renderTimeMachine(){
+  const s=sym(), {income,spent,byCat}=getUserStats();
+  const monthly=spent||0, annual=monthly*12, fiveYear=monthly*60;
+  const topCats=Object.entries(byCat).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  document.getElementById('analysis-output').innerHTML=`
+  <div class="card">
+    <div class="card-title">⏳ Financial Time Machine</div>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:18px">If your current spending habits continue — what does your future look like?</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px">
+      <div style="background:linear-gradient(135deg,rgba(56,189,248,.08),rgba(110,231,183,.08));border:1px solid rgba(110,231,183,.2);padding:18px;border-radius:14px;text-align:center">
+        <div style="font-size:24px;margin-bottom:6px">📅</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px">This Year</div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--sky)">${s}${annual.toLocaleString()}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px">total spent</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(167,139,250,.08),rgba(56,189,248,.08));border:1px solid rgba(167,139,250,.2);padding:18px;border-radius:14px;text-align:center">
+        <div style="font-size:24px;margin-bottom:6px">🗓️</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:4px">In 5 Years</div>
+        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--purple)">${s}${fiveYear.toLocaleString()}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:4px">total spent</div>
+      </div>
+    </div>
+    ${topCats.length?`<div class="card-title" style="margin-bottom:12px">🔮 Category Time Projections</div><div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px">${topCats.map(([cat,amt])=>`<div style="padding:13px;background:var(--surface2);border-radius:11px;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:14px"><div style="font-size:13px;font-weight:600">${cat}</div><div style="text-align:center"><div style="font-size:10px;color:var(--muted)">Per Year</div><div style="font-weight:700;color:var(--gold)">${s}${(amt*12).toLocaleString()}</div></div><div style="text-align:center"><div style="font-size:10px;color:var(--muted)">5 Years</div><div style="font-weight:700;color:var(--rose)">${s}${(amt*60).toLocaleString()}</div></div></div>`).join('')}</div>`:''}
+    <div style="padding:14px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.2);border-radius:11px;font-size:13px;line-height:1.7">
+      🌟 <b>What-If Scenario:</b> If you cut spending by just 10% (${s}${Math.round(monthly*0.1)}/month), you'd save an extra <b>${s}${Math.round(monthly*0.1*12).toLocaleString()} per year</b> and <b>${s}${Math.round(monthly*0.1*60).toLocaleString()} over 5 years</b> — that could be a down payment or emergency fund!
+    </div>
+  </div>`;
+}
+
+function renderGeneralAnalysis(){
+  const s=sym(), {income,spent,remain,byCat,savPct}=getUserStats();
+  const spentPct=income>0?(spent/income*100).toFixed(1):0;
+  const topCats=Object.entries(byCat).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  document.getElementById('analysis-output').innerHTML=`<div class="analysis-box">📊 SPENDING ANALYSIS — General Overview\n\n${income>0?`💡 Key Observations:\nYou've spent ${s}${spent.toFixed(0)} of your ${s}${income.toLocaleString()} income (${spentPct}%). ${spentPct<55?'This puts you in "Excellent" shape! 🌟':spentPct<75?'Good discipline — you\'re on track!':'Watch out — spending is getting high.'}\n\n⚠️ Top Spending Categories:\n${topCats.length?topCats.map((c,i)=>`${i+1}. ${c[0]}: ${s}${c[1].toFixed(0)} (${(c[1]/spent*100).toFixed(0)}%)`).join('\n'):'No expenses tracked yet — add some!'}\n\n💡 3 Actionable Steps:\n1. Review your top category — a 15% cut saves ${s}${topCats[0]?Math.round(topCats[0][1]*0.15):100}/month\n2. Auto-transfer ${s}${Math.round(income*0.05).toLocaleString()}/month to savings\n3. Log every purchase for 30 days — awareness alone cuts spending 12%\n\n🏆 Health Score: ${spentPct<55?'Excellent 95/100':spentPct<70?'Good 75/100':spentPct<85?'Fair 55/100':'Needs Work 35/100'}\n\n🌟 Consistency beats perfection — keep tracking!`:`💡 Welcome to PocketSmart AI!\n\nTo unlock your personalized analysis:\n1. Set your monthly income (check profile settings)\n2. Add your first expense in the Expenses tab\n3. Set a savings goal in the Budget section\n\nOnce you have data, I'll provide deep insights and forecasts! 🚀`}</div>`;
 }
 
 /* ══ Recommendations ══ */
@@ -486,26 +954,26 @@ const recsData={
   general:[
     {pri:'h',title:'Cut Food Spending',cat:'Food',saving:120,desc:'Meal prep on Sundays to reduce restaurant visits. Cook 4 dinners at home — saves $30/week easily.'},
     {pri:'h',title:'Audit Subscriptions',cat:'Entertainment',saving:45,desc:'Review all monthly subscriptions. Most people have 3-4 forgotten ones. Cancel those used less than 2x/month.'},
-    {pri:'m',title:'Cashback Credit Card',cat:'Shopping',saving:80,desc:'Use a 2% cashback card for all purchases. On your $2,840 spend, that\'s $56+ back every month.'},
-    {pri:'m',title:'Reduce Uber Usage',cat:'Transport',saving:90,desc:'Replace 3 Uber rides/week with public transit. At $12 avg per ride, that\'s $144/month saved.'},
+    {pri:'m',title:'Cashback Card',cat:'Shopping',saving:80,desc:'Use a 2% cashback card for all purchases. On your spend, that\'s a meaningful amount back every month.'},
+    {pri:'m',title:'Reduce Ride Sharing',cat:'Transport',saving:90,desc:'Replace 3 ride-share trips/week with public transit. At avg $12 per ride, that\'s $144/month saved.'},
     {pri:'l',title:'Bundle Insurance',cat:'Utilities',saving:35,desc:'Bundle home, auto, and life insurance. Most insurers offer 10-25% multi-policy discounts.'},
   ],
   home:[
     {pri:'h',title:'IKEA KALLAX Shelving',cat:'Furniture',price:89,platform:'IKEA',desc:'Modular shelf system perfect for any room. Doubles as room divider.',tip:'Buy during IKEA family sale for extra 10% off'},
-    {pri:'h',title:'LED Floor Lamp',cat:'Lighting',price:34,platform:'Amazon',desc:'Warm/cool adjustable LED. Instantly changes the mood of a room for under $35.',tip:'Search "TaoTronics floor lamp" on Amazon — best value'},
+    {pri:'h',title:'LED Floor Lamp',cat:'Lighting',price:34,platform:'Amazon',desc:'Warm/cool adjustable LED. Instantly changes the mood of a room.',tip:'Search TaoTronics on Amazon — best value'},
     {pri:'m',title:'5x8 Area Rug',cat:'Decor',price:149,platform:'Wayfair',desc:'Anchor your living room and add warmth. Choose a neutral base color.',tip:'Wayfair Way Day sale — up to 70% off rugs twice a year'},
     {pri:'m',title:'Floating Wall Shelves',cat:'Decor',price:39,platform:'Amazon',desc:'Set of 3 floating shelves for plants, books, or art. Easy to install.',tip:'Amazon Basics brand — same quality for 40% less'},
   ],
   party:[
-    {pri:'h',title:'Costco Catering Platter',cat:'Food',cost:180,desc:'Feed 40 people with Costco party platters. $45-$60 each — way cheaper than restaurant catering.'},
-    {pri:'h',title:'Backyard Venue Setup',cat:'Venue',cost:50,desc:'Use your own space! Rent string lights ($20) and folding chairs ($30-50) from Facebook Marketplace.'},
-    {pri:'m',title:'DIY Balloon Arch',cat:'Decor',cost:35,desc:'Balloon arch kits on Amazon for $25-35. Takes 30 mins and looks stunning — saves $150+ vs florist.'},
-    {pri:'m',title:'Spotify DJ Playlist',cat:'Entertainment',cost:0,desc:'Curate a 4-hour Spotify playlist instead of hiring a DJ. Saves $200-$400.'},
+    {pri:'h',title:'Wholesale Catering Platter',cat:'Food',cost:180,desc:'Feed 40 people with wholesale party platters. Way cheaper than restaurant catering.'},
+    {pri:'h',title:'Home Venue Setup',cat:'Venue',cost:50,desc:'Use your own space! Rent string lights and folding chairs from marketplace apps.'},
+    {pri:'m',title:'DIY Balloon Arch',cat:'Decor',cost:35,desc:'Balloon arch kits available for $25-35. Takes 30 mins and looks stunning — saves $150+ vs florist.'},
+    {pri:'m',title:'Curated Playlist DJ',cat:'Entertainment',cost:0,desc:'Curate a 4-hour playlist instead of hiring a DJ. Saves $200-$400.'},
   ],
   jewelry:[
     {pri:'h',title:'Pearl Drop Earrings',occ:'Wedding/Formal',price:65,tip:'Classic with navy blue — pair with minimal necklace',buy:'Zales / Amazon'},
     {pri:'h',title:'Layered Gold Necklace',occ:'Casual/Date Night',price:55,tip:'3-layer 14K gold-filled — elevates any outfit',buy:'Mejuri / Madewell'},
-    {pri:'m',title:'Sapphire Stud Earrings',occ:'Festive/Religious',price:90,tip:'Navy sapphire matches your outfit perfectly!',buy:'Kay Jewelers / Etsy'},
+    {pri:'m',title:'Sapphire Stud Earrings',occ:'Festive/Religious',price:90,tip:'Navy sapphire matches perfectly!',buy:'Kay Jewelers / Etsy'},
     {pri:'m',title:'Delicate Tennis Bracelet',occ:'Formal Events',price:75,tip:'Silver or gold — works with navy, black, white outfits',buy:'Amazon / Pandora'},
   ]
 };
@@ -515,20 +983,21 @@ function showRecs(btn,type){
   document.getElementById('recs-demo').innerHTML='<div class="rec-grid">'+data.map(r=>buildRecCard(r,type)).join('')+'</div>';
 }
 function buildRecCard(r,type){
+  const s=sym();
   const pc=r.pri==='h'?'pri-h':r.pri==='m'?'pri-m':'pri-l';
   const pl=r.pri==='h'?'HIGH PRIORITY':r.pri==='m'?'MEDIUM PRIORITY':'LOW PRIORITY';
   let ex='';
-  if(type==='general')ex=`<div class="rec-saving"><i class="fa fa-piggy-bank"></i> Save ~$${r.saving}/month</div>`;
-  if(type==='home')ex=`<div class="rec-saving"><i class="fa fa-tag"></i> ~$${r.price} · ${r.platform}</div><div style="margin-top:5px;font-size:11.5px;color:var(--gold)">💡 ${r.tip}</div>`;
-  if(type==='party')ex=`<div class="rec-saving"><i class="fa fa-dollar-sign"></i> ~$${r.cost} estimated</div>`;
+  if(type==='general')ex=`<div class="rec-saving"><i class="fa fa-piggy-bank"></i> Save ~${s}${r.saving}/month</div>`;
+  if(type==='home')ex=`<div class="rec-saving"><i class="fa fa-tag"></i> ~${s}${r.price} · ${r.platform}</div><div style="margin-top:5px;font-size:11.5px;color:var(--gold)">💡 ${r.tip}</div>`;
+  if(type==='party')ex=`<div class="rec-saving"><i class="fa fa-dollar-sign"></i> ~${s}${r.cost} estimated</div>`;
   if(type==='jewelry')ex=`<div style="margin-top:8px;font-size:11.5px;color:var(--purple)">👗 ${r.tip}</div><div style="margin-top:4px;font-size:11.5px;color:var(--sky)"><i class="fa fa-shopping-bag"></i> ${r.buy}</div>`;
   return`<div class="rec-card"><div class="pri ${pc}">${pl}</div><h4>${r.title}</h4><p>${r.desc}</p>${ex}</div>`;
 }
 
 /* ══ Planner Demos ══ */
-function showHomeDemoRecs(){document.getElementById('home-demo-result').innerHTML=`<div class="result-card" style="margin-top:16px"><div class="result-text">🏠 <b>Modern Minimalist Living Room — $2,000 Budget</b>\n\n1. 🛋️ <b>IKEA KIVIK Sofa</b> — ~$599 (IKEA)\n2. 🪑 <b>Mid-Century Accent Chair</b> — ~$189 (Amazon)\n3. 💡 <b>ARC Floor Lamp</b> — ~$79 (Amazon)\n4. 🖼️ <b>Abstract Canvas Art Set (3pc)</b> — ~$49 (Amazon)\n5. 🪴 <b>Large Monstera Plant + Ceramic Pot</b> — ~$65 (IKEA)\n\n<b>Total: ~$981</b> — well within your $2,000 budget! 🎯</div></div>`;}
-function showPartyDemoRecs(){document.getElementById('party-demo-result').innerHTML=`<div class="result-card" style="margin-top:16px"><div class="result-text">🎉 <b>Birthday Party Plan — $1,500 for 40 Guests</b>\n\n🏛️ Venue setup  ........  $75\n🍕 Food & Drinks  .......  $600\n🎊 Decorations  .........  $200\n🎵 Entertainment  .......  $125\n🎂 Birthday Cake  .......  $150\n🎁 Party Favors  ........  $100\n💰 Buffer  ..............  $250\n\n<b>✅ You'll come in UNDER budget!</b></div></div>`;}
-function showJewelryDemoRecs(){document.getElementById('jewelry-demo-result').innerHTML=`<div class="result-card" style="margin-top:16px"><div class="result-text">💎 <b>Gold Jewelry for Wedding — Navy Blue — $300 Budget</b>\n\n1. ✨ <b>14K Gold Pearl Drop Earrings</b> — $65 (Zales)\n2. 📿 <b>Delicate Gold Chain Necklace</b> — $55 (Mejuri)\n3. 💍 <b>Gold Stackable Rings Set (3pc)</b> — $45 (Etsy)\n4. ✨ <b>Gold Cuff Bracelet</b> — $70 (Kendra Scott)\n\n<b>Total: $235 — $65 under your $300 budget!</b> 🎯</div></div>`;}
+function showHomeDemoRecs(){const s=sym();document.getElementById('home-demo-result').innerHTML=`<div class="result-card" style="margin-top:16px"><div class="result-text">🏠 <b>Modern Minimalist Living Room</b>\n\n1. 🛋️ <b>Modern 3-Seater Sofa</b> — ~${s}599\n2. 🪑 <b>Mid-Century Accent Chair</b> — ~${s}189\n3. 💡 <b>Arc Floor Lamp</b> — ~${s}79\n4. 🖼️ <b>Abstract Canvas Art Set (3pc)</b> — ~${s}49\n5. 🪴 <b>Large Monstera Plant + Ceramic Pot</b> — ~${s}65\n\n<b>Total: ~${s}981</b> — well within your budget! 🎯</div></div>`;}
+function showPartyDemoRecs(){const s=sym();document.getElementById('party-demo-result').innerHTML=`<div class="result-card" style="margin-top:16px"><div class="result-text">🎉 <b>Birthday Party Plan — 40 Guests</b>\n\n🏛️ Venue setup  ........  ${s}75\n🍕 Food & Drinks  .......  ${s}600\n🎊 Decorations  .........  ${s}200\n🎵 Entertainment  .......  ${s}125\n🎂 Birthday Cake  .......  ${s}150\n🎁 Party Favors  ........  ${s}100\n💰 Buffer  ..............  ${s}250\n\n<b>✅ You'll come in UNDER budget!</b></div></div>`;}
+function showJewelryDemoRecs(){const s=sym();document.getElementById('jewelry-demo-result').innerHTML=`<div class="result-card" style="margin-top:16px"><div class="result-text">💎 <b>Gold Jewelry for Wedding — Navy Blue</b>\n\n1. ✨ <b>14K Gold Pearl Drop Earrings</b> — ${s}65\n2. 📿 <b>Delicate Gold Chain Necklace</b> — ${s}55\n3. 💍 <b>Gold Stackable Rings Set (3pc)</b> — ${s}45\n4. ✨ <b>Gold Cuff Bracelet</b> — ${s}70\n\n<b>Total: ${s}235 — ${s}65 under your budget!</b> 🎯</div></div>`;}
 
 /* ══ Toast ══ */
 function showToast(msg,type='success'){
